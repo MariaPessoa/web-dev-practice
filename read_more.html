@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Read Mores</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="read_more.css">
+</head>
+
+<body>
+    <h1>Read more example</h1>
+    <div class="container">
+        <div class="card">
+            <h2>1</h2>
+            <p class="card-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam praesentium ducimus voluptas cum quos
+                necessitatibus tempora porro quam maxime est, aspernatur provident aperiam saepe nobis qui non ex.
+                Corrupti, reiciendis.
+                Voluptatem, quis corrupti? Laboriosam harum nihil ea eveniet provident corporis velit. Natus nostrum
+                aperiam, voluptatum delectus qui animi magnam temporibus officia quas omnis possimus commodi cupiditate
+                veritatis deleniti voluptatibus accusantium!
+            </p>
+            <a class="more">Read</a>
+        </div>
+        <div class="card">
+            <h2>2</h2>
+            <p class="card-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam praesentium ducimus voluptas cum quos
+                necessitatibus tempora porro quam maxime est, aspernatur provident aperiam saepe nobis qui non ex.
+                Corrupti, reiciendis.
+                Voluptatem, quis corrupti? Laboriosam harum nihil ea eveniet provident corporis velit. Natus nostrum
+                aperiam, voluptatum delectus qui animi magnam temporibus officia quas omnis possimus commodi cupiditate
+                veritatis deleniti voluptatibus accusantium!
+            </p>
+            <a class="more">Read</a>
+        </div>
+        <div class="card">
+            <h2>3</h2>
+            <p class="card-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam praesentium ducimus voluptas cum quos
+                necessitatibus tempora porro quam maxime est, aspernatur provident aperiam saepe nobis qui non ex.
+                Corrupti, reiciendis.
+                Voluptatem, quis corrupti? Laboriosam harum nihil ea eveniet provident corporis velit. Natus nostrum
+                aperiam, voluptatum delectus qui animi magnam temporibus officia quas omnis possimus commodi cupiditate
+                veritatis deleniti voluptatibus accusantium!
+            </p>
+            <a class="more">Read</a>
+        </div>
+    </div>
+    <script>
+        let more = document.querySelectorAll(".more");
+        for (let i = 0; i < more.length; i++) {
+            more[i].addEventListener("click", () => {
+                more[i].parentNode.classList.toggle("active")
+            })
+        }
+    </script>
+</body>
+
+</html>
