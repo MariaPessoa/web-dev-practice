@@ -1,0 +1,89 @@
+html,body {
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0px;
+    font-family: sans-serif;
+}
+body {
+    background-color: grey;
+}
+header {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: black;
+    padding: 0 50px;
+    border-bottom: solid 2px white;
+    display: flex;
+    justify-content: flex-end;
+}
+header nav {
+    margin: 0px;  
+}
+header nav ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+header nav ul li {
+    /* position: relative; */
+    list-style: none;
+    text-transform: uppercase;
+}
+header nav ul li a {
+    height: 50px;
+    /* to center? */
+    line-height: 50px;
+    padding: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display:block;
+    color: white;
+    /* position: relative; */
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: black;
+    background-color: hotpink;
+}
+.menu-toggle {
+    margin: auto 0;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    /* to hide in large screens i guess */
+    display: none;
+}
+
+@media (max-width: 990px) {
+    header {
+        /* turns down padding for icon*/
+        padding: 0 20px;
+        /* to fake bar after collapse */
+        height: 50px;
+        border-bottom: solid 2px black;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: black; 
+        transition: 0.3s;
+        position: absolute;         
+    }
+    header nav.active {
+        left: 0;
+        top: 50px;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav ul li {
+        border-bottom: solid 2px white;
+    }
+
+}
