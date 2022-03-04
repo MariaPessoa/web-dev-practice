@@ -20,9 +20,10 @@ function buildList() {
     let newList = document.createElement("div");
     newList.classList.add("list");
 
-    let newTitle = document.createElement("h2");
-    newTitle.innerText = "New list";
-    newTitle.classList.add("title");
+    // let newTitle = document.createElement("h2");
+    let newTitle = document.createElement("input");
+    newTitle.setAttribute('placeholder', "New list");
+    newTitle.classList.add("input-title");
 
     let newForm = document.createElement("form");
     newForm.classList.add("list-form");

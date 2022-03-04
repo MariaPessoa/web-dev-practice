@@ -24,12 +24,13 @@ h1 {
     margin: 0;
 }
 
-/* .input-title  {
+.input-title  {
     background-color: black;
     color: white;
     border: none;
     font-size: 1.4rem;
     font-weight: bold;
+    text-align:center;
 }
 .input-title::placeholder {
     color: white;
@@ -37,7 +38,7 @@ h1 {
 .input-title:focus {
     outline: none;
     color: hotpink;
-} */
+}
 
  #container {
     padding: 20px;
