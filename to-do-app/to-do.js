@@ -2,7 +2,6 @@ let form = document.querySelector("#list-form");
 let list = document.querySelector("#all-items");
 let input = document.querySelector("input");
 let clearButton = document.querySelector("#clear");
-let listItems = document.querySelectorAll("li");
 
 
 form.addEventListener("submit", (e) => {
@@ -30,7 +29,12 @@ const addItem = (item) => {
 }
 
 clearButton.addEventListener("click", () => {
-    list.remove(listItems)
-    list.classList.remove("active");
+    let listItems = document.querySelectorAll("li");
+    if (listItems.length !== 0) {
+        for (let i = 0; i < listItems.length; i++) {
+            listItems[i].remove()
+        }
+        list.classList.remove("active");
+    }
 })
 
