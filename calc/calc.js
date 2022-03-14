@@ -4,7 +4,9 @@ let enter = document.getElementById("enter");
 let clear = document.getElementById("clear");
 let erase = document.getElementById("erase");
 let memBack = document.getElementById("mem");
+let negpos = document.getElementById("negpos");
 
+// only valid results
 let memory = [];
 
 // missing sqr root
@@ -35,7 +37,7 @@ enter.addEventListener("click", () => {
             for (let i = 0; i < keys.length; i++) {
                 screenText = screenText.replaceAll(keys[i], mathKeys[keys[i]]);
             }
-            console.log(screenText);
+            // console.log(screenText);
             result = eval(screenText);
             // divide by zero is infinity, not error
         } catch (error) {
@@ -47,9 +49,6 @@ enter.addEventListener("click", () => {
 
             if (result !== "error") {
                 memory.push(result);
-                if (memory.length === 7) {
-                    memory.shift();
-                }
             }
         }
     }
@@ -57,6 +56,7 @@ enter.addEventListener("click", () => {
 
 erase.addEventListener("click", () => {
     screen.innerText = screen.innerText.slice(0, screen.innerText.length - 1);
+
     if (screen.innerText.length === 0) {
         screen.classList.remove("active");
     }
@@ -64,6 +64,7 @@ erase.addEventListener("click", () => {
 
 clear.addEventListener("click", () => {
     screen.innerText = "";
+    state = [];
     screen.classList.remove("active");
 })
 
@@ -75,3 +76,17 @@ memBack.addEventListener("click", () => {
         }
     }
 })
+
+negpos.addEventListener("click", () => {
+    let before = screen.innerText.slice(0, screen.innerText.length - 1);
+    let after = screen.innerText.slice(screen.innerText.length - 1, screen.innerText.length);
+
+    if (before.slice(before.length - 2, before.length) === "(-") {
+        screen.innerText = before.slice(0, before.length - 2) + after;
+    }
+    else {
+        screen.innerText = before + "(-" + after;
+    }
+
+})
+
